@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/**
+ * @Author: harsha
+ * @Date:   2019-05-13T22:46:53+05:30
+ * @Last modified by:   harsha
+ * @Last modified time: 2019-06-05T08:55:19+05:30
+ */
+
+import React from "react";
+import { Container } from "semantic-ui-react";
+import "./App.css";
+import LunchViewComponent from "./components/LunchViewComponent/LunchViewComponent";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="Branch-header">
+        <Container>
+          <h1 className="Branch-title">LunchPlace</h1>
+        </Container>
       </header>
+      <LunchViewComponent />
     </div>
   );
 }
