@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-06-05T10:26:46+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-06-05T15:06:32+05:30
+ * @Last modified time: 2019-06-05T15:14:16+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -16,6 +16,10 @@ import {
 } from "../../actions/fetchRestaurantsActions";
 
 class RestaurantGridComponent extends Component {
+  /**
+   * [updateVotesHandler description]
+   * @return {[type]} [description]
+   */
   updateVotesHandler = () => {
     const { votes, updatedVotes, rating, ratingCount, name } = this.props;
     const newRating = { ...rating };
@@ -38,6 +42,13 @@ class RestaurantGridComponent extends Component {
     }
   };
 
+  /**
+   * [renderHeadSection description]
+   * @param  {[type]} restGridStack [description]
+   * @param  {[type]} rating        [description]
+   * @return {[type]}               [description]
+   */
+
   renderHeadSection = (restGridStack, rating) => {
     const maxVal = Math.max.apply(null, Object.values(rating));
     return restGridStack.map((restaurant, index) => {
@@ -58,13 +69,31 @@ class RestaurantGridComponent extends Component {
     });
   };
 
+  /**
+   * [registerNameChange description]
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
+
   registerNameChange = e => {
     this.props.nameUpdateWatcher(e.target.value);
   };
 
+  /**
+   * [registerOptionChange description]
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
+
   registerOptionChange = e => {
     this.props.choiceUpdateWatcher(e.target.value);
   };
+
+  /**
+   * [renderVotesResult description]
+   * @param  {[type]} votes [description]
+   * @return {[type]}       [description]
+   */
 
   renderVotesResult = votes => {
     return votes.map((voteCount, index) => (

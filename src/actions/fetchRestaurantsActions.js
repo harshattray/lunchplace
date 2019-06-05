@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-06-05T09:36:18+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-06-05T15:07:24+05:30
+ * @Last modified time: 2019-06-05T15:15:07+05:30
  */
 import {
   GET_SEARCH_RESULTS,
@@ -16,6 +16,13 @@ import {
 import qs from "qs";
 import axios from "axios";
 import { baseUrl } from "../constants";
+
+/**
+ * [fetchRestaurantsData description]
+ * @param  {[type]} formData [description]
+ * @return {[type]}          [description]
+ */
+
 export const fetchRestaurantsData = formData => async (dispatch, getState) => {
   const { orgname } = formData;
   try {
@@ -36,12 +43,26 @@ export const fetchRestaurantsData = formData => async (dispatch, getState) => {
   }
 };
 
+/**
+ * [initfetchRepoData description]
+ * @return {[type]} [description]
+ */
+
 function initfetchRepoData() {
   return {
     type: INIT_SEARCH_REQUEST,
     isLoading: true
   };
 }
+
+/**
+ * [updateVotesCount description]
+ * @param  {[type]} votes       [description]
+ * @param  {[type]} name        [description]
+ * @param  {[type]} rating      [description]
+ * @param  {[type]} ratingCount [description]
+ * @return {[type]}             [description]
+ */
 
 export const updateVotesCount = (votes, name, rating, ratingCount) => async (
   dispatch,
@@ -56,12 +77,23 @@ export const updateVotesCount = (votes, name, rating, ratingCount) => async (
   });
 };
 
+/**
+ * [nameUpdateWatcher description]
+ * @param  {[type]} data [description]
+ * @return {[type]}      [description]
+ */
 export const nameUpdateWatcher = data => async (dispatch, getState) => {
   dispatch({
     type: NAME_UPDATE_WATCHER,
     name: data
   });
 };
+
+/**
+ * [choiceUpdateWatcher description]
+ * @param  {[type]} data [description]
+ * @return {[type]}      [description]
+ */
 
 export const choiceUpdateWatcher = data => async (dispatch, getState) => {
   dispatch({

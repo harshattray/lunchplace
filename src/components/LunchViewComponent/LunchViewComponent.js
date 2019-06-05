@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-06-05T08:33:34+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-06-05T11:38:34+05:30
+ * @Last modified time: 2019-06-05T15:13:07+05:30
  */
 import React, { Fragment, Component } from "react";
 import { bindActionCreators } from "redux";
@@ -17,7 +17,7 @@ export class LunchViewComponent extends Component {
     return (
       <Fragment>
         <SearchbarComponent />
-        {restDataStack ? (
+        {restDataStack && restDataStack.length > 0 ? (
           <RestaurantGridComponent />
         ) : (
           <p>Restaurant data shows up here</p>
